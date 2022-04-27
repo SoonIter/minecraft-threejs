@@ -17,7 +17,8 @@ export enum BlockType {
   wood = 7,
   diamond = 8,
   quartz = 9,
-  glass = 10
+  glass = 10,
+  bedrock = 11
 }
 export default class Terrain {
   constructor(scene: THREE.Scene, camera: THREE.PerspectiveCamera) {
@@ -77,13 +78,14 @@ export default class Terrain {
     MaterialType.wood,
     MaterialType.diamond,
     MaterialType.quartz,
-    MaterialType.glass
+    MaterialType.glass,
+    MaterialType.bedrock
   ]
 
   // other properties
   blocks: THREE.InstancedMesh[] = []
   blocksCount: number[] = []
-  blocksFactor = [1, 0.2, 0.1, 0.7, 0.1, 0.2, 0.1, 0.1, 0.1, 0.1, 0.1]
+  blocksFactor = [1, 0.2, 0.1, 0.7, 0.1, 0.2, 0.1, 0.1, 0.1, 0.1, 0.1, 0.7]
 
   customBlocks: Block[] = []
   highlight: Highlight
@@ -222,6 +224,9 @@ export default class Terrain {
 
     if (stoneOffset > noise.stoneThreshold || y < 23) {
       type = BlockType.stone
+      if (y < -30) {
+        type = BlockType.bedrock
+      }
     } else {
       if (yOffset < -3) {
         type = BlockType.sand

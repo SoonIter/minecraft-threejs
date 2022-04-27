@@ -13,7 +13,8 @@ enum BlockType {
   wood = 7,
   diamond = 8,
   quartz = 9,
-  glass = 10
+  glass = 10,
+  bedrock = 11
 }
 
 const matrix = new THREE.Matrix4()
@@ -236,7 +237,7 @@ onmessage = (
     }
   }
 
-  const arrays = blocks.map(block => block.instanceMatrix.array)
+  const arrays = blocks.map((block) => block.instanceMatrix.array)
   postMessage({ idMap, arrays, blocksCount })
   // console.log(performance.now() - p1)
 }

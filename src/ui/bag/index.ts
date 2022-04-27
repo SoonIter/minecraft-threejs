@@ -5,6 +5,7 @@ import wood from '../../static/block-icon/wood.png'
 import diamond from '../../static/block-icon/diamond.png'
 import quartz from '../../static/block-icon/quartz.png'
 import glass from '../../static/block-icon/glass.png'
+import bedrock from '../../static/block-icon/stone.png'
 
 export default class Bag {
   constructor() {
@@ -51,7 +52,7 @@ export default class Bag {
   }
   wheelGap = false
   current = 0
-  icon = [grass, stone, tree, wood, diamond, quartz, glass]
+  icon = [grass, stone, tree, wood, diamond, quartz, glass, bedrock]
   iconIndex = 0
   y = 0
 

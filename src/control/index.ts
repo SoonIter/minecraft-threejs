@@ -88,7 +88,7 @@ export default class Control {
     BlockType.diamond,
     BlockType.quartz,
     BlockType.glass,
-    BlockType.grass,
+    BlockType.bedrock,
     BlockType.grass,
     BlockType.grass
   ]
